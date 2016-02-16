@@ -30,8 +30,9 @@ grailsPublish {
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
-}  
+}
 
 dependencies {
-    runtime "org.grails.profiles:base:${project.grailsVersion}"
+    // webプロファイルからの派生とする。
+    runtime "org.grails.profiles:web:${project.grailsVersion}"
 }
