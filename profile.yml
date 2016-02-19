@@ -1,4 +1,8 @@
 description: This is the profile of myself, by myself, for myself.
+features:
+    defaults:
+        - hibernate
+        - asset-pipeline
 skeleton:
     excludes:
         - grails-app/i18n/messages_*.properties
