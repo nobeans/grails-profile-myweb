@@ -44,6 +44,7 @@ def warn =  { logger it, WARN,  ['STDOUT', 'FILE'], false }
 def info =  { logger it, INFO,  ['STDOUT', 'FILE'], false }
 def debug = { logger it, DEBUG, ['STDOUT', 'FILE'], false }
 def trace = { logger it, TRACE, ['STDOUT', 'FILE'], false }
+def off =   { logger it, OFF,   ['STDOUT', 'FILE'], false }
 
 
 //
@@ -76,7 +77,7 @@ Environment.executeForCurrentEnvironment {
         trace 'org.hibernate.type.EnumType'
         debug 'org.hibernate.SQL'
         debug 'groovy.sql.Sql'
-        trace 'grails.app.controllers.request.tracelog.RequestTracelogInterceptor'
+        //off 'grails.app.controllers.request.tracelog.RequestTracelogInterceptor'
     }
     test {
         debug '@grails.codegen.defaultPackage@'

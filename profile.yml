@@ -3,9 +3,7 @@ features:
     defaults:
         - hibernate
         - asset-pipeline
+        - logging
 skeleton:
     excludes:
         - grails-app/i18n/messages_*.properties
-dependencies:
-    compile:
-        - "org.grails.plugins:request-tracelog:1.1.1"
