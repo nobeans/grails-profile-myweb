@@ -76,6 +76,7 @@ Environment.executeForCurrentEnvironment {
         trace 'org.hibernate.type.EnumType'
         debug 'org.hibernate.SQL'
         debug 'groovy.sql.Sql'
+        trace 'grails.app.controllers.request.tracelog.RequestTracelogInterceptor'
     }
     test {
         //debug 'YOUR_APP_PACKAGE' // FIXME

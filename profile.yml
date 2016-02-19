@@ -1,1 +1,4 @@
 description: This is the profile of myself, by myself, for myself.
+dependencies:
+    compile:
+        - "org.grails.plugins:request-tracelog:1.1.1"
