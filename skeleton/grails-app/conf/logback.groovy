@@ -66,12 +66,12 @@ error 'net.sf.ehcache.config.ConfigurationFactory'
 warn 'org.apache.coyote'
 warn 'org.apache.tomcat'
 warn 'org.apache.catalina'
-//info 'YOUR_APP_PACKAGE' // FIXME
+info '@grails.codegen.defaultPackage@'
 
 Environment.executeForCurrentEnvironment {
     development {
-        //debug 'YOUR_APP_PACKAGE' // FIXME
-        //debug 'grails.app.controllers.YOUR_APP_PACKAGE' // FIXME
+        debug '@grails.codegen.defaultPackage@'
+        debug 'grails.app.controllers.@grails.codegen.defaultPackage@'
         trace 'org.hibernate.type.descriptor.sql.BasicBinder'
         trace 'org.hibernate.type.EnumType'
         debug 'org.hibernate.SQL'
@@ -79,8 +79,8 @@ Environment.executeForCurrentEnvironment {
         trace 'grails.app.controllers.request.tracelog.RequestTracelogInterceptor'
     }
     test {
-        //debug 'YOUR_APP_PACKAGE' // FIXME
-        //debug 'grails.app.controllers.YOUR_APP_PACKAGE' // FIXME
+        debug '@grails.codegen.defaultPackage@'
+        debug 'grails.app.controllers.@grails.codegen.defaultPackage@'
         trace 'org.hibernate.type.descriptor.sql.BasicBinder'
         trace 'org.hibernate.type.EnumType'
         debug 'org.hibernate.SQL'
