@@ -4,6 +4,7 @@ features:
         - hibernate
         - asset-pipeline
         - logging
+        - error-handling
 skeleton:
     excludes:
         - grails-app/i18n/messages_*.properties
