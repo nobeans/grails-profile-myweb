@@ -1,0 +1,6 @@
+
+// システムプロパティをGrailsに伝播させる
+// http://mrhaki.blogspot.jp/2015/09/grails-goodness-passing-system.html
+configure(bootRun) {
+    systemProperties System.properties
+}
