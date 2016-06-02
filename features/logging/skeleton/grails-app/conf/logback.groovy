@@ -10,7 +10,6 @@ def CONSOLE_LOG_PATTERN = /%d{HH:mm:ss.SSS} [%thread] %highlight(%level) %cyan(\
 def logDir = 'logs'
 
 appender('STDOUT', ConsoleAppender) {
-    withJansi = true
     encoder(PatternLayoutEncoder) {
         pattern = CONSOLE_LOG_PATTERN
     }
