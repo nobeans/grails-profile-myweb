@@ -5,7 +5,5 @@ hibernate:
 ---
 grails:
     databinding:
-        # 空文字は空文字、nullはnullとして扱う
         convertEmptyStringsToNull: false
-        # 前後の半角スペースのトリムはする
         trimStrings: true
