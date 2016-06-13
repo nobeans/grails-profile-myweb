@@ -1,5 +1,3 @@
-package @grails.codegen.defaultPackage@
-
 import grails.util.GrailsUtil
 
 class UrlMappings {
