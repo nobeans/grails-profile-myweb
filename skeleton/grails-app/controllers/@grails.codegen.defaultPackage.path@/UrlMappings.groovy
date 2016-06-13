@@ -1,4 +1,4 @@
-package myweb.sample
+package @grails.codegen.defaultPackage@
 
 import grails.util.GrailsUtil
 
