@@ -17,7 +17,6 @@ def parseConstrainedProperties = { Class targetClass ->
     def aggregator = new ConstraintAggregator(targetClass)
     constraintsClosure.delegate = aggregator
     constraintsClosure.call()
-    println aggregator.props
     return aggregator.props
 }
 
