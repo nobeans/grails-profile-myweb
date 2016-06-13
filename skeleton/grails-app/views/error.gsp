@@ -17,7 +17,7 @@
   <g:else>
     <h1><g:message code="default.error.label"/></h1>
     <ul class="errors">
-      <g:if test="${status}"><li>${status.value()} ${status.reasonPhrase}</li></g:if>
+      <g:if test="${status}"><li>${status}</li></g:if>
       <g:if test="${message}"><li>Message: ${message}</li></g:if>
       <g:if test="${path}"><li>Path: ${path}</li></g:if>
       <g:if test="${exception}"><li>Exception: ${exception}</li></g:if>
