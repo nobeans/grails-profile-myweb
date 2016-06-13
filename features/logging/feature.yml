@@ -1,4 +1,0 @@
-description: Configuration of logging
-dependencies:
-    compile:
-        - "org.grails.plugins:request-tracelog:1.2.0"
