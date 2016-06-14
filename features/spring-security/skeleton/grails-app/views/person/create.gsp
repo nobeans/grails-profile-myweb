@@ -10,19 +10,9 @@
 
 <body>
 <div id="create-person" class="content scaffold-create" role="main">
-  <h1 class="page-header">
-    <g:message code="default.create.label" args="[entityName]"/>
-  </h1>
+  <h1 class="page-header"><g:message code="default.create.label" args="[entityName]"/></h1>
 
-  <g:hasErrors bean="${this.person}">
-    <div class="alert alert-danger" role="alert">
-      <ul>
-        <g:eachError bean="${this.person}" var="error">
-          <li><g:message error="${error}"/></li>
-        </g:eachError>
-      </ul>
-    </div>
-  </g:hasErrors>
+  <g:render template="/messages" model="[bean: this.person]"/>
 
   <g:form action="save" class="form-horizontal">
     <div class="form-group">

@@ -18,7 +18,9 @@
 <div class="row">
   <div class="col-sm-16 col-md-16">
     <h1 class="page-header"><g:message code="default.list.label" args="[message(code: 'person.label')]"/></h1>
+
     <g:render template="/messages"/>
+
     <table class="table table-striped table-hover">
       <thead>
       <tr>

@@ -8,8 +8,8 @@
 
 <body>
 <h1 class="page-header"><g:message code="default.show.label" args="[entityName]"/></h1>
+
 <g:render template="/messages"/>
-<br>
 
 <div>
   <dl class="dl-horizontal">
