@@ -1,3 +1,4 @@
+// https://grails-plugins.github.io/grails-spring-security-core/v3/index.html
 grails {
     plugin {
         springsecurity {
