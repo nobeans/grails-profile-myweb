@@ -5,6 +5,14 @@ import java.lang.reflect.Field
 // Helper
 //
 
+def parseClass = { File file ->
+    def classLoader = new GroovyClassLoader()
+    classLoader.addClasspath('grails-app/domain')
+    classLoader.addClasspath('src/main/groovy')
+    classLoader.addClasspath('src/main/java')
+    return classLoader.parseClass(file)
+}
+
 def isDomainClass = { Class targetClass ->
     targetClass.genericInterfaces.any { it.typeName == "grails.artefact.DomainClass" }
 }
@@ -166,14 +174,14 @@ class WherePattern {
 //
 
 description("Generates a ConstraintSpec") {
-    usage "grails generate-constraint-test [DOMAIN CLASS]"
-    argument name: 'Domain Class', description: "The name of the domain class", required: true
+    usage "grails generate-constraint-test [DOMAIN CLASS|COMMAND OBJECT]"
+    argument name: 'Domain Class (Command Object)', description: "The name of the domain class (or command object)", required: true
     completer DomainClassCompleter
     flag name: 'force', description: "Whether to overwrite existing files"
 }
 
 if (!args) {
-    error "No domain class specified"
+    error "No domain class (or command object) specified"
     return
 }
 
@@ -190,7 +198,7 @@ for (arg in classNames) {
         error "Domain class not found for name $arg"
         continue
     }
-    Class targetClass = new GroovyClassLoader().parseClass(sourceClassResource.file)
+    Class targetClass = parseClass(sourceClassResource.file)
 
     def model = model(sourceClassResource)
 
