@@ -1,0 +1,4 @@
+description: Spring Security
+dependencies:
+    compile:
+        - "org.grails.plugins:spring-security-core:3.1.1"
