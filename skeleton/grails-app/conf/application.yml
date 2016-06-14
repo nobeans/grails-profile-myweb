@@ -7,3 +7,9 @@ grails:
     databinding:
         convertEmptyStringsToNull: false
         trimStrings: true
+
+---
+grails:
+    controller:
+        maxDefault: 10
+        maxLimit: 100
