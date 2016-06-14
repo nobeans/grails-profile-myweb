@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}"/>
+        <g:set var="entityName" value="${message(code: 'person.label')}"/>
         <title>
             <g:message code="default.create.label" args="[entityName]"/>
         </title>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-7">
-                        <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}"/>
+                        <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label')}"/>
                     </div>
                 </div>
             </g:form>

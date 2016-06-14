@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}"/>
+        <g:set var="entityName" value="${message(code: 'person.label')}"/>
         <title>
             <g:message code="default.edit.label" args="[entityName]"/>
         </title>
@@ -51,7 +51,7 @@
                 </div>
                 <fieldset class="buttons">
                     <input class="save btn btn-primary" type="submit"
-                           value="${message(code: 'default.button.edit.label', default: 'Update')}"/>
+                           value="${message(code: 'default.button.edit.label')}"/>
                 </fieldset>
             </g:form>
         </div>

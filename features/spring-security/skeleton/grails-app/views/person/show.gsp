@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
+        <g:set var="entityName" value="${message(code: 'person.label')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -21,8 +21,8 @@
             <g:form resource="${this.person}" method="DELETE">
                 <div class="form-group">
                     <div class="col-sm-10">
-                        <g:link class="edit btn btn-primary" action="edit" resource="${this.person}"><g:message code="default.button.edit.label" default="Edit"/></g:link>
-                        <input class="delete btn btn-danger" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
+                        <g:link class="edit btn btn-primary" action="edit" resource="${this.person}"><g:message code="default.button.edit.label"/></g:link>
+                        <input class="delete btn btn-danger" type="submit" value="${message(code: 'default.button.delete.label')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message')}');"/>
                     </div>
                 </div>
             </g:form>
