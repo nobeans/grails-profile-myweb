@@ -1,0 +1,27 @@
+.login-form {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 380px;
+}
+
+header .header__menu {
+  padding-top: 4px;
+}
+
+header .header__menu .logout-form {
+  display: inline;
+}
+
+header .header__menu .logout-button {
+  margin-top: -4px;
+  margin-left: 5px;
+  padding: 2px 2px 0 5px;
+  background: transparent;
+  color: #f6f6f6;
+}
+
+header .header__menu .logout-button:hover {
+  color: #4d8618;
+  background-color: #fff;
+}

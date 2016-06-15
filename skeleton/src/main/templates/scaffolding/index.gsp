@@ -7,23 +7,24 @@
 </head>
 
 <body>
-<div class="nav" role="navigation">
-  <ul>
-    <li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-    <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]"/></g:link></li>
-  </ul>
-</div>
+<nav class="navbar toolbar">
+  <div class="navbar-form navbar-right">
+    <g:link class="create" action="create" class="btn btn-primary"><g:message code="default.new.label" args="[entityName]"/></g:link>
+  </div>
+</nav>
 
 <div id="list-${propertyName}" class="content scaffold-list" role="main">
-  <h1><g:message code="default.list.label" args="[entityName]"/></h1>
+  <h1 class="page-header"><g:message code="default.list.label" args="[entityName]"/></h1>
 
   <g:render template="/messages"/>
 
   <f:table collection="\${${propertyName}List}"/>
 
-  <div class="pagination">
-    <g:paginate total="\${${propertyName}Count ?: 0}"/>
-  </div>
+  <nav class="text-center">
+    <ul class="pagination">
+      <g:paginate total="\${${propertyName}Count ?: 0}"/>
+    </ul>
+  </nav>
 </div>
 </body>
 </html>

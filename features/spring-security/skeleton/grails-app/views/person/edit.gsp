@@ -3,12 +3,16 @@
 <head>
   <meta name="layout" content="main"/>
   <g:set var="entityName" value="${message(code: 'person.label')}"/>
-  <title>
-    <g:message code="default.edit.label" args="[entityName]"/>
-  </title>
+  <title><g:message code="default.edit.label" args="[entityName]"/></title>
 </head>
 
 <body>
+<nav class="navbar toolbar">
+  <div class="navbar-text navbar-left">
+    <g:link class="list" action="index"><span class="fa fa-angle-double-left">&nbsp;</span><g:message code="default.list.label" args="[entityName]"/></g:link>
+  </div>
+</nav>
+
 <div id="edit-person" class="content scaffold-edit" role="main">
   <h1 class="page-header"><g:message code="default.edit.label" args="[entityName]"/></h1>
 
@@ -16,40 +20,13 @@
 
   <g:form resource="${this.person}" method="PUT" class="form-horizontal">
     <g:hiddenField name="version" value="${this.person?.version}"/>
-    <div class="form-group">
-      <label for="loginName" class="col-md-2 control-label"><g:message code="person.loginName.label"/></label>
-
-      <div class="col-sm-4">
-        <g:textField name="loginName" class="form-control" id="loginName" value="${person.loginName}"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="realName" class="col-md-2 control-label"><g:message code="person.realName.label"/></label>
-
-      <div class="col-sm-4">
-        <g:textField name="realName" class="form-control" id="realName" value="${person.realName}"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="password" class="col-md-2 control-label"><g:message code="person.password.label"/></label>
-
-      <div class="col-sm-4">
-        <g:passwordField name="password" class="form-control" id="password" value="${person.password}"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="passwordToConfirm" class="col-md-2 control-label"><g:message code="person.passwordToConfirm.label"/></label>
-
-      <div class="col-sm-4">
-        <g:passwordField name="passwordToConfirm" class="form-control" id="passwordToConfirm" value="${person.passwordToConfirm}"/>
-      </div>
-    </div>
+    <fieldset class="form">
+      <f:all bean="person" order="realName, loginName, password, passwordToConfirm"/>
+    </fieldset>
     <fieldset class="buttons">
-      <input class="save btn btn-primary" type="submit"
-             value="${message(code: 'default.button.edit.label')}"/>
+      <div class="col-xs-offset-2 col-xs-10">
+        <input class="save btn btn-primary" type="submit" value="${message(code: 'default.button.update.label')}"/>
+      </div>
     </fieldset>
   </g:form>
 </div>

@@ -6,3 +6,15 @@ features:
 skeleton:
     excludes:
         - grails-app/i18n/messages_*.properties
+        - grails-app/assets/stylesheets/*.css
+        - grails-app/assets/javascripts/bootstrap.js
+        - grails-app/assets/javascripts/jquery-*.js
+dependencies:
+    build:
+        - com.bertramlabs.plugins:sass-asset-pipeline:2.8.2
+    assets:
+        - com.bertramlabs.plugins:sass-asset-pipeline:2.8.2
+    provided:
+        - org.webjars:jquery:2.2.1
+        - org.webjars:bootstrap:3.3.6
+        - org.webjars:font-awesome:4.6.1

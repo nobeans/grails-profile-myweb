@@ -7,44 +7,24 @@
 </head>
 
 <body>
-<div class="row">
-  <div class="col-sm-16 col-md-16">
-    <a href="${createLink(controller: 'person', action: 'create')}" class="btn btn-primary pull-right">
-      <g:message code="default.new.label" args="[message(code: 'person.label')]"/>
-    </a>
+<nav class="navbar toolbar">
+  <div class="navbar-form navbar-right">
+    <g:link class="create" action="create" class="btn btn-primary"><g:message code="default.new.label" args="[entityName]"/></g:link>
   </div>
-</div>
+</nav>
 
-<div class="row">
-  <div class="col-sm-16 col-md-16">
-    <h1 class="page-header"><g:message code="default.list.label" args="[message(code: 'person.label')]"/></h1>
+<div id="list-person" class="content scaffold-list" role="main">
+  <h1 class="page-header"><g:message code="default.list.label" args="[entityName]"/></h1>
 
-    <g:render template="/messages"/>
+  <g:render template="/messages"/>
 
-    <table class="table table-striped table-hover">
-      <thead>
-      <tr>
-        <g:sortableColumn property="loginName" titleKey="person.loginName.label"/>
-        <g:sortableColumn property="realName" titleKey="person.realName.label"/>
-        <g:sortableColumn property="dateCreated" titleKey="person.dateCreated.label"/>
-      </tr>
-      </thead>
-      <tbody>
-      <g:each var="person" in="${personList}">
-        <tr>
-          <td><a href="${createLink(controller: 'person', action: 'show', params: [id: person.id])}">${person.loginName}</a></td>
-          <td>${person.realName}</td>
-          <td><g:formatDate date="${person.dateCreated}"/></td>
-        </tr>
-      </g:each>
-      </tbody>
-    </table>
-    <nav class="text-center">
-      <ul class="pagination">
-        <g:paginate total="${personCount ?: 0}"/>
-      </ul>
-    </nav>
-  </div>
+  <f:table collection="${personList}" properties="['loginName', 'realName', 'dateCreated']"/>
+
+  <nav class="text-center">
+    <ul class="pagination">
+      <g:paginate total="${personCount ?: 0}"/>
+    </ul>
+  </nav>
 </div>
 </body>
 </html>

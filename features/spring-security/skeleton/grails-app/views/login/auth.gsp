@@ -2,17 +2,14 @@
 <html>
 <head>
   <meta name="layout" content="main"/>
-  <title><g:message code="app.title" args="[message(code: 'springSecurity.login.title')]"/></title>
+  <title><g:message code="springSecurity.login.title"/></title>
 </head>
 
 <body>
 <div class="row">
   <div class="login-form">
-    <g:if test="${flash.message}">
-      <div class="alert alert-dismissible alert-danger">
-        ${flash.message}
-      </div>
-    </g:if>
+    <g:render template="/messages"/>
+
     <div class="modal-content">
       <g:form controller="login" action="authenticate" method="POST" autocomplete="off" class="form-signin form-horizontal ng-pristine ng-valid form-group">
         <div class="modal-header">

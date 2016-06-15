@@ -1,0 +1,45 @@
+//
+// 基本構成
+//
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: Avenir, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Verdana, Roboto, '游ゴシック', 'Yu Gothic', '游ゴシック体', 'YuGothic', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Meiryo UI', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 1.8;
+  height: 100vh;
+  color: #444;
+  background-color: #f6f6f6;
+  padding-top: 60px;
+}
+
+body, header, footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header {
+  padding-left: 0;
+  color: #f6f6f6;
+  background-color: #4d8618;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .6);
+}
+
+header .navbar-brand {
+  color: inherit;
+  background-color: #5a7103;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+footer {
+  color: #f6f6f6;
+  background-color: #345b10;
+}
+
+footer .navbar-right {
+  margin-right: 0;
+}
