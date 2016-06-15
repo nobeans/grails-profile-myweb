@@ -16,7 +16,7 @@
 <div id="edit-${propertyName}" class="content scaffold-edit" role="main">
   <h1 class="page-header"><g:message code="default.edit.label" args="[entityName]"/></h1>
 
-  <g:render template="/messages" model="[bean: this.${propertyName}]"/>
+  <g:render template="/templates/messages" model="[bean: this.${propertyName}]"/>
 
   <g:form resource="\${this.${propertyName}}" method="PUT" class="form-horizontal">
     <g:hiddenField name="version" value="\${this.${propertyName}?.version}"/>

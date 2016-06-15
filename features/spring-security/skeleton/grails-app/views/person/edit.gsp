@@ -16,7 +16,7 @@
 <div id="edit-person" class="content scaffold-edit" role="main">
   <h1 class="page-header"><g:message code="default.edit.label" args="[entityName]"/></h1>
 
-  <g:render template="/messages" model="[bean: this.person]"/>
+  <g:render template="/templates/messages" model="[bean: this.person]"/>
 
   <g:form resource="${this.person}" method="PUT" class="form-horizontal">
     <g:hiddenField name="version" value="${this.person?.version}"/>

@@ -16,7 +16,7 @@
 <div id="list-person" class="content scaffold-list" role="main">
   <h1 class="page-header"><g:message code="default.list.label" args="[entityName]"/></h1>
 
-  <g:render template="/messages"/>
+  <g:render template="/templates/messages"/>
 
   <f:table collection="${personList}" properties="['loginName', 'realName', 'dateCreated']"/>
 

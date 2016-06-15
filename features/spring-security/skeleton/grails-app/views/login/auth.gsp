@@ -8,7 +8,7 @@
 <body>
 <div class="row">
   <div class="login-form">
-    <g:render template="/messages"/>
+    <g:render template="/templates/messages"/>
 
     <div class="modal-content">
       <g:form controller="login" action="authenticate" method="POST" autocomplete="off" class="form-signin form-horizontal ng-pristine ng-valid form-group">

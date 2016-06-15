@@ -16,7 +16,7 @@
 <div id="create-person" class="content scaffold-create" role="main">
   <h1 class="page-header"><g:message code="default.create.label" args="[entityName]"/></h1>
 
-  <g:render template="/messages" model="[bean: this.person]"/>
+  <g:render template="/templates/messages" model="[bean: this.person]"/>
 
   <g:form action="save" method="POST" class="form-horizontal">
     <fieldset class="form">
