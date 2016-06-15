@@ -17,7 +17,7 @@ class Role {
     String authority
 
     static constraints = {
-        authority blank: false, unique: true
+        authority blank: false, unique: true, matches: /^ROLE_.*/
     }
 
     static Role getAdmin() {

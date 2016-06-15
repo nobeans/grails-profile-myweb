@@ -5,7 +5,7 @@ import spock.lang.Unroll
 import test.ConstraintUnitSpec
 
 @TestFor(Person)
-class PersonSpec extends ConstraintUnitSpec {
+class PersonConstraintSpec extends ConstraintUnitSpec {
 
     Person person = new Person()
 
