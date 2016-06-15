@@ -11,7 +11,6 @@ body {
     height: 100vh;
     color: #444;
     background-color: #f6f6f6;
-    padding-top: 60px;
 }
 
 body, header, footer {
@@ -31,6 +30,11 @@ header .navbar-brand {
     background-color: #5a7103;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+article {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 footer {
