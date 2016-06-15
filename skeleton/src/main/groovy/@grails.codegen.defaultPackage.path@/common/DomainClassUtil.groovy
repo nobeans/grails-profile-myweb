@@ -52,7 +52,14 @@ class DomainClassUtil {
 
     private static List<String> getDisplayProperties(Object obj, String actionName) {
         if (!obj.hasProperty('displayProperties')) return null
-        return obj.displayProperties[actionName]
+        def props = obj.displayProperties[actionName]
+        if (actionName == 'udpate' && !props) {
+            return getDisplayProperties(obj, 'edit')
+        }
+        if (actionName == 'save' && !props) {
+            return getDisplayProperties(obj, 'create')
+        }
+        return props
     }
 
     private static List<GrailsDomainClassProperty> resolvePersistentProperties(Class clazz) {
