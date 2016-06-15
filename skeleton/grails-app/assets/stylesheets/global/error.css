@@ -1,9 +1,28 @@
 /* エラー画面 */
 
-.error {
-    text-align: center;
+.error .error-details {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9.5px;
 }
 
-.error h1 {
-    font-size: 200px;
+.error .error-details {
+    background-color: #ddd;
+}
+
+.error .error-details dd {
+    margin-left: 15px;
+}
+
+.error .snippet,
+.error .stack {
+    background-color: #f6f6f6;
+}
+
+.error .snippet code {
+    display: block;
+}
+
+.error  .line.error {
+    background-color: #fdd;;
 }
