@@ -7,14 +7,7 @@
 </head>
 
 <body>
-<nav class="navbar toolbar">
-  <div class="navbar-text navbar-left">
-    <g:link class="list" action="index"><span class="fa fa-angle-double-left">&nbsp;</span><g:message code="default.list.label" args="[entityName]"/></g:link>
-  </div>
-  <div class="navbar-form navbar-right">
-    <g:link class="create" action="create" class="btn btn-primary"><g:message code="default.new.label" args="[entityName]"/></g:link>
-  </div>
-</nav>
+<g:render template="/templates/toolbar"/>
 
 <div id="show-${propertyName}" class="content scaffold-show" role="main">
   <h1 class="page-header"><g:message code="default.show.label" args="[entityName]"/></h1>
