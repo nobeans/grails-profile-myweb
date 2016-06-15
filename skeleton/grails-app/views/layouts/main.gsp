@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><g:message code="app.title" args="[layoutTitle(default: message(code: 'app.name'))]"/></title>
+  <title><g:message code="app.title" args="[layoutTitle(), message(code: 'app.name')]"/></title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <asset:stylesheet src="application.css"/>
   <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
