@@ -13,6 +13,9 @@ skeleton:
         - grails-app/assets/stylesheets/grails.css
         - grails-app/assets/stylesheets/main.css
         - grails-app/assets/stylesheets/mobile.css
+        - grails-app/assets/images/skin/
+        - grails-app/assets/images/apple-touch-icon*
+        - grails-app/assets/images/grails-cupsonly-logo-white.svg
 dependencies:
     provided:
         - org.webjars:jquery:2.2.1
