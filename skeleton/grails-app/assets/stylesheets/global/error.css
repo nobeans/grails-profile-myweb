@@ -1,0 +1,9 @@
+/* エラー画面 */
+
+.error {
+    text-align: center;
+}
+
+.error h1 {
+    font-size: 200px;
+}

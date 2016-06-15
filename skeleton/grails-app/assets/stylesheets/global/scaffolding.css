@@ -1,24 +1,22 @@
-//
-// スキャフォルド
-//
+/* スキャフォルド */
 
 .scaffold-show dt,
 .scaffold-show dd {
-  line-height: 2.5em;
+    line-height: 2.5em;
 }
 
 .scaffold-show .property-label {
-  text-align: right;
+    text-align: right;
 }
 
 .pagination * {
-  margin: 0 .5em;
+    margin: 0 .5em;
 }
 
 .toolbar .navbar-text {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .toolbar .navbar-form {
-  margin-top: 12px;
+    margin-top: 12px;
 }

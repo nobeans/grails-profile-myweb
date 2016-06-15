@@ -1,0 +1,8 @@
+/* Grails開発用ポータル画面 */
+
+.grails-logo {
+    position: fixed;
+    top: 80px;
+    right: -100px;
+    z-index: -1;
+}
