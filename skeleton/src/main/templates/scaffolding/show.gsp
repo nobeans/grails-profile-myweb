@@ -21,12 +21,12 @@
 
   <g:render template="/templates/messages"/>
 
-  <f:display bean="${propertyName}"/>
+  <g:render template="/templates/singleBean" model="\${[bean: ${propertyName}, editable: false]}"/>
 
-  <g:form resource="\${this.${propertyName}}" method="DELETE">
+  <g:form resource="\${${propertyName}}" method="DELETE">
     <fieldset class="buttons">
       <div class="col-xs-offset-2 col-xs-10">
-        <g:link class="edit btn btn-primary" action="edit" resource="\${this.${propertyName}}"><g:message code="default.button.edit.label"/></g:link>
+        <g:link class="edit btn btn-primary" action="edit" resource="\${${propertyName}}"><g:message code="default.button.edit.label"/></g:link>
         <input class="delete btn btn-danger" type="submit" value="\${message(code: 'default.button.delete.label')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message')}');" />
       </div>
     </fieldset>

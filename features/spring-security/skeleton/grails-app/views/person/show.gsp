@@ -21,13 +21,12 @@
 
   <g:render template="/templates/messages"/>
 
-  <%-- 現状でf:displayではorder, except, propertiesは使えない --%>
-  <f:display bean="person" order="realName, loginName, dateCreated"/>
+  <g:render template="/templates/singleBean" model="${[bean: person, properties: ['loginName', 'realName', 'dateCreated'], editable: false]}"/>
 
-  <g:form resource="${this.person}" method="DELETE">
+  <g:form resource="${person}" method="DELETE">
     <fieldset class="buttons">
       <div class="col-xs-offset-2 col-xs-10">
-        <g:link class="edit btn btn-primary" action="edit" resource="${this.person}"><g:message code="default.button.edit.label"/></g:link>
+        <g:link class="edit btn btn-primary" action="edit" resource="${person}"><g:message code="default.button.edit.label"/></g:link>
         <input class="delete btn btn-danger" type="submit" value="${message(code: 'default.button.delete.label')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message')}');" />
       </div>
     </fieldset>

@@ -18,7 +18,7 @@
 
   <g:render template="/templates/messages"/>
 
-  <f:table collection="\${${propertyName}List}"/>
+  <g:render template="/templates/beanList" model="\${[collection: ${propertyName}List]}"/>
 
   <nav class="text-center">
     <ul class="pagination">

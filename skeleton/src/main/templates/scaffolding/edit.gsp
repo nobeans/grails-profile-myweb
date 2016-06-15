@@ -16,13 +16,15 @@
 <div id="edit-${propertyName}" class="content scaffold-edit" role="main">
   <h1 class="page-header"><g:message code="default.edit.label" args="[entityName]"/></h1>
 
-  <g:render template="/templates/messages" model="[bean: this.${propertyName}]"/>
+  <g:render template="/templates/messages" model="[bean: ${propertyName}]"/>
 
-  <g:form resource="\${this.${propertyName}}" method="PUT" class="form-horizontal">
-    <g:hiddenField name="version" value="\${this.${propertyName}?.version}"/>
+  <g:form resource="\${${propertyName}}" method="PUT">
+    <g:hiddenField name="version" value="\${${propertyName}?.version}"/>
+
     <fieldset class="form">
-      <f:all bean="${propertyName}"/>
+      <g:render template="/templates/singleBean" model="\${[bean: ${propertyName}, editable: true]}"/>
     </fieldset>
+
     <fieldset class="buttons">
       <div class="col-xs-offset-2 col-xs-10">
         <input class="save btn btn-primary" type="submit" value="\${message(code: 'default.button.update.label')}"/>

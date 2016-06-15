@@ -16,11 +16,11 @@
 <div id="create-${propertyName}" class="content scaffold-create" role="main">
   <h1 class="page-header"><g:message code="default.create.label" args="[entityName]"/></h1>
 
-  <g:render template="/templates/messages" model="[bean: this.${propertyName}]"/>
+  <g:render template="/templates/messages" model="[bean: ${propertyName}]"/>
 
-  <g:form action="save" method="POST" class="form-horizontal">
+  <g:form action="save" method="POST">
     <fieldset class="form">
-      <f:all bean="${propertyName}"/>
+      <g:render template="/templates/singleBean" model="\${[bean: ${propertyName}, editable: true]}"/>
     </fieldset>
 
     <fieldset class="buttons">

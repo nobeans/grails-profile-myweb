@@ -18,7 +18,7 @@
 
   <g:render template="/templates/messages"/>
 
-  <f:table collection="${personList}" properties="['loginName', 'realName', 'dateCreated']"/>
+  <g:render template="/templates/beanList" model="${[collection: personList, properties: ['loginName', 'realName', 'dateCreated']]}"/>
 
   <nav class="text-center">
     <ul class="pagination">

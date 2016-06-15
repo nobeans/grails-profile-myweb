@@ -11,7 +11,7 @@
     <g:render template="/templates/messages"/>
 
     <div class="modal-content">
-      <g:form controller="login" action="authenticate" method="POST" autocomplete="off" class="form-signin form-horizontal ng-pristine ng-valid form-group">
+      <g:form controller="login" action="authenticate" method="POST" autocomplete="off" class="form-signin form-horizontal form-group">
         <div class="modal-header">
           <h4 class="modal-title">${message(code: 'springSecurity.login.message')}</h4>
         </div>

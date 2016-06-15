@@ -1,14 +1,5 @@
 /* スキャフォルド */
 
-.scaffold-show dt,
-.scaffold-show dd {
-    line-height: 2.5em;
-}
-
-.scaffold-show .property-label {
-    text-align: right;
-}
-
 .pagination * {
     margin: 0 .5em;
 }

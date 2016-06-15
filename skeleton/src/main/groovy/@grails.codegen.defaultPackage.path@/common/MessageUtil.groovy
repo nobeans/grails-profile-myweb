@@ -1,4 +1,4 @@
-package @grails.codegen.defaultPackage@
+package @grails.codegen.defaultPackage@.common
 
 import grails.util.Holders
 import org.grails.web.servlet.mvc.GrailsWebRequest
