@@ -20,11 +20,11 @@
           <label for="${usernameParameter ?: 'username'}" class="sr-only">
             <g:message code='springSecurity.login.username.label'/>
           </label>
-          <g:textField name="${usernameParameter ?: 'username'}" class="form-control" placeholder="${message(code: 'springSecurity.login.username.label')}" required="" autofocus=""/>
+          <g:textField name="${usernameParameter ?: 'username'}" class="form-control" placeholder="${message(code: 'springSecurity.login.username.label')}" required=""/>
           <label for="${passwordParameter ?: 'password'}" class="sr-only">
             <g:message code='springSecurity.login.password.label'/>
           </label>
-          <g:passwordField name="${passwordParameter ?: 'password'}" class="form-control" placeholder="${message(code: 'springSecurity.login.password.label')}" required="" autofocus=""/>
+          <g:passwordField name="${passwordParameter ?: 'password'}" class="form-control" placeholder="${message(code: 'springSecurity.login.password.label')}" required=""/>
           <input type="submit" class="btn btn-block btn-success" value="${message(code: 'springSecurity.login.button')}"/>
         </div>
       </g:form>

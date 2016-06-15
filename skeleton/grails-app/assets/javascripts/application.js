@@ -9,3 +9,8 @@
 //= require webjars/bootstrap/3.3.6/js/bootstrap.min
 //= require_tree global
 //= require_self
+
+(function ($) {
+    // 最初の入力要素にフォーカスをあてる。
+    $('input:visible[type!="button"][type!="submit"],textarea:visible').first().focus();
+})(jQuery);
