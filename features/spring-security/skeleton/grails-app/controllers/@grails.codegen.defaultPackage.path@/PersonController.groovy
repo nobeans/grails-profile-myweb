@@ -1,5 +1,6 @@
 package @grails.codegen.defaultPackage@
 
+import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.util.Holders
 
@@ -54,6 +55,12 @@ class PersonController {
      */
     @Transactional
     def save(Person person) {
+        if (person == null) {
+            transactionStatus.setRollbackOnly()
+            notFound()
+            return
+        }
+
         if (person.hasErrors()) {
             transactionStatus.setRollbackOnly()
             respond person.errors, view: 'create'
@@ -62,8 +69,13 @@ class PersonController {
 
         person.addToAuthorities(Role.admin).save flush: true
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'person.label'), person.loginName])
-        redirect person
+        withFormat {
+            json xml { respond person, [status: CREATED] }
+            '*' {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'person.label')])
+                redirect person
+            }
+        }
     }
 
     /**
@@ -73,6 +85,11 @@ class PersonController {
      * @return
      */
     def edit(Person person) {
+        if (person == null) {
+            notFound()
+            return
+        }
+
         respond person
     }
 
@@ -98,8 +115,13 @@ class PersonController {
 
         person.save flush: true
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'person.label'), person.loginName])
-        redirect person
+        withFormat {
+            json xml { respond person, [status: OK] }
+            '*' {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'person.label')])
+                redirect person
+            }
+        }
     }
 
     /**
@@ -120,14 +142,23 @@ class PersonController {
 
         if (person.admin && lastAdminPerson) {
             transactionStatus.setRollbackOnly()
-            render view: 'show', model: [person: person, errorMessage: message(code: 'person.not.deleted.error')]
+            def model = [person: person, errorMessage: message(code: 'person.not.deleted.error')]
+            withFormat {
+                json xml { respond(model, status: BAD_REQUEST) }
+                '*' { render view: 'show', model: model }
+            }
             return
         }
 
         person.delete flush: true
 
-        flash.message = message(code: 'default.deleted.message', args: [message(code: 'person.label'), person.loginName])
-        redirect action: "index", method: "GET"
+        withFormat {
+            json xml { render status: NO_CONTENT }
+            '*' {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'person.label')])
+                redirect action: "index", method: "GET"
+            }
+        }
     }
 
     private boolean isLastAdminPerson() {
@@ -135,7 +166,12 @@ class PersonController {
     }
 
     protected void notFound() {
-        flash.errorMessage = message(code: 'default.not.found.message', args: [message(code: 'person.label'), params.id])
-        redirect action: 'index'
+        withFormat {
+            json xml { respond([:], status: NOT_FOUND) }
+            '*' {
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'person.label'), params.id])
+                redirect action: "index", method: "GET"
+            }
+        }
     }
 }

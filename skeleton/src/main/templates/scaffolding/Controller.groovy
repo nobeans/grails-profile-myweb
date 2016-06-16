@@ -20,7 +20,7 @@ class ${className}Controller {
      */
     def index(Integer max) {
         params.max = Math.min(max ?: Holders.config.grails.controller.maxDefault, Holders.config.grails.controller.maxLimit)
-        respond ${className}.list(params), model:[${propertyName}Count: ${className}.count()]
+        respond ${className}.list(params), model: [${propertyName}Count: ${className}.count()]
     }
 
     /**
@@ -30,6 +30,11 @@ class ${className}Controller {
      * @return
      */
     def show(${className} ${propertyName}) {
+        if (${propertyName} == null) {
+            notFound()
+            return
+        }
+
         respond ${propertyName}
     }
 
@@ -58,18 +63,18 @@ class ${className}Controller {
 
         if (${propertyName}.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond ${propertyName}.errors, view:'create'
+            respond ${propertyName}.errors, view: 'create'
             return
         }
 
-        ${propertyName}.save flush:true
+        ${propertyName}.save flush: true
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: '${propertyName}.label'), ${propertyName}.id])
+        withFormat {
+            json xml { respond ${propertyName}, [status: CREATED] }
+            '*' {
+                flash.message = message(code: 'default.created.message', args: [message(code: '${propertyName}.label')])
                 redirect ${propertyName}
             }
-            '*' { respond ${propertyName}, [status: CREATED] }
         }
     }
 
@@ -80,6 +85,11 @@ class ${className}Controller {
      * @return
      */
     def edit(${className} ${propertyName}) {
+        if (${propertyName} == null) {
+            notFound()
+            return
+        }
+
         respond ${propertyName}
     }
 
@@ -99,18 +109,18 @@ class ${className}Controller {
 
         if (${propertyName}.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond ${propertyName}.errors, view:'edit'
+            respond ${propertyName}.errors, view: 'edit'
             return
         }
 
-        ${propertyName}.save flush:true
+        ${propertyName}.save flush: true
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: '${propertyName}.label'), ${propertyName}.id])
+        withFormat {
+            json xml { respond ${propertyName}, [status: OK] }
+            '*' {
+                flash.message = message(code: 'default.updated.message', args: [message(code: '${propertyName}.label')])
                 redirect ${propertyName}
             }
-            '*'{ respond ${propertyName}, [status: OK] }
         }
     }
 
@@ -122,31 +132,30 @@ class ${className}Controller {
      */
     @Transactional
     def delete(${className} ${propertyName}) {
-
         if (${propertyName} == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        ${propertyName}.delete flush:true
+        ${propertyName}.delete flush: true
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: '${propertyName}.label'), ${propertyName}.id])
-                redirect action:"index", method:"GET"
+        withFormat {
+            json xml { render status: NO_CONTENT }
+            '*' {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: '${propertyName}.label')])
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
         }
     }
 
     protected void notFound() {
-        request.withFormat {
-            form multipartForm {
+        withFormat {
+            json xml { respond([:], status: NOT_FOUND) }
+            '*' {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: '${propertyName}.label'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
         }
     }
 }
