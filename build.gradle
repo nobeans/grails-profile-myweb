@@ -36,3 +36,33 @@ dependencies {
     // webプロファイルからの派生とする。
     runtime "org.grails.profiles:web:${project.grailsVersion}"
 }
+
+task createSampleApp(type: Exec) {
+    dependsOn install
+
+    workingDir = file(System.getProperty('java.io.tmpdir'))
+
+    def appName = "myweb-sample"
+    def projectDir = file("$workingDir/myweb-sample")
+
+    def cmd = ["grails", "create-app", "--profile=myweb"]
+    if (Boolean.getBoolean('with-spring-security')) {
+        cmd << "--features=hibernate,asset-pipeline,spring-security"
+    }
+    cmd << appName
+    commandLine = cmd
+
+    doFirst {
+        if (projectDir.exists()) {
+            projectDir.delete()
+            println "Deleted existed $projectDir"
+        }
+
+        println ">> Executing command..."
+        println "\$ ${commandLine.join(' ')}"
+    }
+
+    doLast {
+        println "Created application at $workingDir/$appName"
+    }
+}
