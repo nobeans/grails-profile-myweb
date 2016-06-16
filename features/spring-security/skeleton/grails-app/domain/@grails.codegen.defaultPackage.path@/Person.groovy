@@ -79,11 +79,4 @@ class Person {
     static mapping = {
         password column: '`password`'
     }
-
-    static displayProperties = [
-        index: ['loginName', 'realName', 'dateCreated'],
-        show: ['loginName', 'realName', 'dateCreated'],
-        edit: ['loginName', 'realName', 'password', 'passwordToConfirm'],
-        create: ['loginName', 'realName', 'password', 'passwordToConfirm'],
-    ]
 }

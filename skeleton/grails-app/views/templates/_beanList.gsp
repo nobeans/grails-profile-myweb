@@ -1,6 +1,6 @@
 <g:if test="${collection}">
 
-  <g:set var="domainProperties" value="${properties ?: @grails.codegen.defaultPackage@.common.DomainClassUtil.getConstrainedPropertyNames(collection.first(), actionName)}"/>
+  <g:set var="domainProperties" value="${properties ?: @grails.codegen.defaultPackage@.common.DomainClassUtil.getConstrainedPropertyNames(collection.first())}"/>
   <g:set var="domainClassName" value="${@grails.codegen.defaultPackage@.common.DomainClassUtil.getDomainClassPropertyName(collection.first())}"/>
 
   <table class="table table-striped table-hover">

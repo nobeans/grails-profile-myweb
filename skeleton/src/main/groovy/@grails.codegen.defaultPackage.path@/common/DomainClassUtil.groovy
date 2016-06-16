@@ -23,11 +23,7 @@ class DomainClassUtil {
      * @param domainClass
      * @return
      */
-    static List<String> getConstrainedPropertyNames(domainClass, String actionName) {
-        def displayProperties = getDisplayProperties(domainClass, actionName)
-        if (displayProperties) {
-            return displayProperties
-        }
+    static List<String> getConstrainedPropertyNames(domainClass) {
         if (domainClass instanceof DomainClass) {
             return resolvePersistentProperties(domainClass.class).collect { it.name }
         }
@@ -48,18 +44,6 @@ class DomainClassUtil {
             return StringUtils.uncapitalize(domainClass.class.simpleName)
         }
         throw new IllegalArgumentException("ドメインクラスまたはコマンドオブジェクトではありません。: ${domainClass.class}")
-    }
-
-    private static List<String> getDisplayProperties(Object obj, String actionName) {
-        if (!obj.hasProperty('displayProperties')) return null
-        def props = obj.displayProperties[actionName]
-        if (actionName == 'udpate' && !props) {
-            return getDisplayProperties(obj, 'edit')
-        }
-        if (actionName == 'save' && !props) {
-            return getDisplayProperties(obj, 'create')
-        }
-        return props
     }
 
     private static List<GrailsDomainClassProperty> resolvePersistentProperties(Class clazz) {
