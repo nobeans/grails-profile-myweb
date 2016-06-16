@@ -26,7 +26,7 @@ class PersonController {
             return
         }
 
-        if (lastAdminPerson) {
+        if (person.admin && lastAdminPerson) {
             transactionStatus.setRollbackOnly()
             render view: 'show', model: [person: person, errorMessage: message(code: 'person.not.deleted.error')]
             return
