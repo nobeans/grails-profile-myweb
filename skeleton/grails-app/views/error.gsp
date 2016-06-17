@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title><g:if env="development">Grails Runtime Exception (for Development)</g:if><g:else>Error</g:else></title>
+  <title><g:message code="default.error.label"/><g:if env="development">(for Development)</g:if></title>
   <meta name="layout" content="main">
   <g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
 </head>
@@ -18,7 +18,7 @@
     <g:else>
       <h1><g:message code="default.error.label"/></h1>
       <ul class="errors">
-        <g:if test="${status}"><li>${status}</li></g:if>
+        <g:if test="${status}"><li>Status: ${status}</li></g:if>
         <g:if test="${message}"><li>Message: ${message}</li></g:if>
         <g:if test="${path}"><li>Path: ${path}</li></g:if>
         <g:if test="${exception}"><li>Exception: ${exception}</li></g:if>
@@ -28,10 +28,8 @@
   <g:else>
     <h1><g:message code="default.error.label"/></h1>
     <ul class="errors">
-      <ul class="errors">
-        <g:if test="${status}"><li>${status}</li></g:if>
-        <g:if test="${message}"><li>${message}</li></g:if>
-      </ul>
+      <g:if test="${status}"><li>Status: ${status}</li></g:if>
+      <g:if test="${message}"><li>Message: ${message}</li></g:if>
     </ul>
   </g:else>
 </div>
