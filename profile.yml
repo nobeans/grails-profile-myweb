@@ -15,6 +15,7 @@ skeleton:
         - grails-app/assets/stylesheets/mobile.css
         - grails-app/assets/images/skin/
         - grails-app/assets/images/apple-touch-icon*
+        - grails-app/views/notFound.gsp
 dependencies:
     compile:
         - org.grails.plugins:request-tracelog:1.2.0
