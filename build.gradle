@@ -54,7 +54,9 @@ task createSampleApp(type: Exec) {
 
     doFirst {
         if (projectDir.exists()) {
-            projectDir.delete()
+            // ディレクトリ自体はそのままでその下のファイルをすべて削除する。
+            // こうすることで、何度も繰り返してサンプルアプリを再生成して試行錯誤しやすくなる。
+            projectDir.eachFile { assert it.directory ? it.deleteDir() : it.delete() }
             println "Deleted existed $projectDir"
         }
 
