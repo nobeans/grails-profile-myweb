@@ -16,7 +16,7 @@
 
   <g:form action="save" method="POST">
     <fieldset class="form">
-      <g:render template="/templates/singleBean" model="${[bean: person, properties: ['realName', 'loginName', 'password', 'passwordToConfirm'], editable: true]}"/>
+      <g:render template="/templates/singleBean" model="${[bean: person, properties: ['loginName', 'realName', 'password', 'passwordToConfirm'], editable: true]}"/>
     </fieldset>
 
     <fieldset class="buttons">
