@@ -11,3 +11,53 @@
 .toolbar .navbar-form {
     margin-top: 12px;
 }
+
+fieldset.buttons {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.form-control.display {
+    background: inherit;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-top: 11px;
+    padding-left: 0px;
+}
+
+textarea.form-control {
+    height: 6em;
+}
+
+.form-control[type="checkbox"] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 18px;
+}
+
+.form-control[type="number"] {
+    width: 135px;
+}
+
+.form-control[type="range"] {
+    box-shadow: none;
+}
+
+.form-control.datepicker {
+    width: 150px;
+    background-color: #fff;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.form-control.datetime {
+    width: 188px;
+}
+
+.picker * {
+    transition: none;
+}
+
+.picker__weekday {
+    text-align: center;
+}

@@ -7,6 +7,8 @@
 //
 //= require webjars/jquery/2.2.1/jquery.min
 //= require webjars/bootstrap/3.3.6/js/bootstrap.min
+//= require webjars/pickadate.js/3.5.6/picker
+//= require webjars/pickadate.js/3.5.6/picker.date
 //= require_tree global
 //= require_self
 

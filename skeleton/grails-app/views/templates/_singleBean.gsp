@@ -7,8 +7,8 @@
   }
 %>
 
-<g:set var="domainProperties" value="${properties ?: @grails.codegen.defaultPackage@.common.DomainClassUtil.getConstrainedPropertyNames(bean)}"/>
-<g:set var="domainClassName" value="${@grails.codegen.defaultPackage@.common.DomainClassUtil.getDomainClassPropertyName(bean)}"/>
+<g:set var="domainProperties" value="${properties ?: myweb.sample.common.DomainClassUtil.getConstrainedPropertyNames(bean)}"/>
+<g:set var="domainClassName" value="${myweb.sample.common.DomainClassUtil.getDomainClassPropertyName(bean)}"/>
 
 <div class="form-horizontal">
 
@@ -18,10 +18,10 @@
 
       <div class="col-xs-4">
         <g:if test="${Boolean.valueOf(editable)}">
-          <f:widget bean="${bean}" property="${propName}"/>
+          <f:widget bean="${bean}" property="${propName}" class="form-control"/>
         </g:if>
         <g:else>
-          <f:displayWidget bean="${bean}" property="${propName}"/>
+          <span class="form-control display"><f:displayWidget bean="${bean}" property="${propName}"/></span>
         </g:else>
       </div>
     </div>

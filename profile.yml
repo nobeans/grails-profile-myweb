@@ -23,3 +23,4 @@ dependencies:
         - org.webjars:jquery:2.2.1
         - org.webjars:bootstrap:3.3.6
         - org.webjars:font-awesome:4.6.1
+        - org.webjars:pickadate.js:3.5.6
