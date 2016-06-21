@@ -12,5 +12,6 @@
 *= require webjars/pickadate.js/3.5.6/themes/default
 *= require webjars/pickadate.js/3.5.6/themes/default.date
 *= require_tree global
+*= require_tree ${grails.util.Environment.currentEnvironment.toString() == 'DEVELOPMENT' ? 'development' : 'SHOULD_NOT_LOAD'}
 *= require_self
 */
