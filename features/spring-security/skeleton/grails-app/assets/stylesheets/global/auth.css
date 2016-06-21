@@ -1,8 +1,17 @@
 .login-form {
   display: block;
+  margin-top: 100px;
   margin-right: auto;
   margin-left: auto;
   width: 380px;
+}
+
+.login-form .modal-body {
+  margin-top: 10px;
+}
+
+.login-form .form-control {
+  margin-bottom: 15px;
 }
 
 header .header__menu {

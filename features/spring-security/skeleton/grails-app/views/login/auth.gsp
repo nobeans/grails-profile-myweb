@@ -25,7 +25,7 @@
             <g:message code='springSecurity.login.password.label'/>
           </label>
           <g:passwordField name="${passwordParameter ?: 'password'}" class="form-control" placeholder="${message(code: 'springSecurity.login.password.label')}" required=""/>
-          <input type="submit" class="btn btn-block btn-success" value="${message(code: 'springSecurity.login.button')}"/>
+          <input type="submit" class="btn btn-block btn-primary" value="${message(code: 'springSecurity.login.button')}"/>
         </div>
       </g:form>
     </div>
