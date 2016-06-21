@@ -15,7 +15,7 @@ class MessageUtil {
      *
      * @param error
      */
-    static String message(ObjectError error) {
+    static String getMessage(ObjectError error) {
         try {
             def messageSource = Holders.applicationContext.messageSource
             return messageSource.getMessage(error, locale)
@@ -33,7 +33,7 @@ class MessageUtil {
      * @param args
      * @param defaultMessage
      */
-    static String message(String code, List args, String defaultMessage = null) {
+    static String getMessage(String code, List args = [], String defaultMessage = null) {
         try {
             def messageSource = Holders.applicationContext.messageSource
             return messageSource.getMessage(code, args as Object[], locale)
