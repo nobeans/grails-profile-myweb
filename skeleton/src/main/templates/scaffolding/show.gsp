@@ -18,7 +18,7 @@
 
   <g:form resource="\${${propertyName}}" method="DELETE">
     <fieldset class="buttons">
-      <div class="col-xs-offset-2 col-xs-10">
+      <div class="col-xs-offset-3 col-xs-9">
         <g:link class="edit btn btn-primary" action="edit" resource="\${${propertyName}}"><g:message code="default.button.edit.label"/></g:link>
         <input class="delete btn btn-danger" type="submit" value="\${message(code: 'default.button.delete.label')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message')}');" />
       </div>

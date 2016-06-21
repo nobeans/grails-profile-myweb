@@ -22,7 +22,7 @@
     </fieldset>
 
     <fieldset class="buttons">
-      <div class="col-xs-offset-2 col-xs-10">
+      <div class="col-xs-offset-3 col-xs-9">
         <input class="save btn btn-primary" type="submit" value="${message(code: 'default.button.update.label')}"/>
       </div>
     </fieldset>

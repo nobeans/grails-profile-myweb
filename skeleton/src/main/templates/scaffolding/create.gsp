@@ -20,7 +20,7 @@
     </fieldset>
 
     <fieldset class="buttons">
-      <div class="col-xs-offset-2 col-xs-10">
+      <div class="col-xs-offset-3 col-xs-9">
         <g:submitButton name="create" class="save btn btn-primary" value="\${message(code: 'default.button.create.label')}"/>
       </div>
     </fieldset>

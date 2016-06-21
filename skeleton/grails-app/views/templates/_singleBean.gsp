@@ -14,9 +14,9 @@
 
   <g:each in="${domainProperties}" var="propName">
     <div class="form-group">
-      <label for="${propName}" class="col-xs-2 control-label"><g:message code="${domainClassName}.${propName}.label"/></label>
+      <label for="${propName}" class="col-xs-3 control-label"><g:message code="${domainClassName}.${propName}.label"/></label>
 
-      <div class="col-xs-4">
+      <div class="col-xs-9">
         <g:if test="${Boolean.valueOf(editable)}">
           <f:widget bean="${bean}" property="${propName}" class="form-control"/>
         </g:if>

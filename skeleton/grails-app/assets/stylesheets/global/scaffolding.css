@@ -13,8 +13,17 @@
 }
 
 fieldset.buttons {
+    margin-top: 30px;
     margin-right: -15px;
     margin-left: -15px;
+}
+
+.form label {
+    margin-top: -3px;
+}
+
+.form-control {
+    font-size: 16px;
 }
 
 .form-control.display {
@@ -22,7 +31,7 @@ fieldset.buttons {
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    padding-top: 11px;
+    padding-top: 9px;
     padding-left: 0px;
 }
 
@@ -45,13 +54,13 @@ textarea.form-control {
 }
 
 .form-control.datepicker {
-    width: 150px;
+    width: 180px;
     background-color: #fff;
     border-radius: 0 4px 4px 0 !important;
 }
 
 .form-control.datetime {
-    width: 188px;
+    width: 218px;
 }
 
 .picker * {
@@ -60,4 +69,10 @@ textarea.form-control {
 
 .picker__weekday {
     text-align: center;
+}
+
+@media screen and (min-width: 860px) {
+    .form-control {
+        max-width: 80%;
+    }
 }
