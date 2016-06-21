@@ -14,7 +14,7 @@
 
   <g:render template="/templates/messages"/>
 
-  <g:render template="/templates/beanList" model="${[collection: personList, properties: ['loginName', 'realName', 'dateCreated']]}"/>
+  <g:render template="/templates/beanList" model="${[collection: personList, properties: ['loginName', 'realName', 'dateCreated', 'lastUpdated']]}"/>
 
   <nav class="text-center">
     <ul class="pagination">

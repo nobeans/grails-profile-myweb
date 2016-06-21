@@ -14,7 +14,7 @@
 
   <g:render template="/templates/messages"/>
 
-  <g:render template="/templates/singleBean" model="${[bean: person, properties: ['loginName', 'realName', 'dateCreated'], editable: false]}"/>
+  <g:render template="/templates/singleBean" model="${[bean: person, properties: ['loginName', 'realName', 'dateCreated', 'lastUpdated'], editable: false]}"/>
 
   <g:form resource="${person}" method="DELETE">
     <fieldset class="buttons">

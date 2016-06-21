@@ -28,6 +28,9 @@ class Person {
     /** 作成日時 */
     Date dateCreated
 
+    /** 最終更新日時 */
+    Date lastUpdated
+
     // TODO アカウント有効・無効の仕組みを使う場合はfinalをはずして可変にすること。
     final boolean enabled = true
     final boolean accountExpired = false
