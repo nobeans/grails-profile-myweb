@@ -9,7 +9,7 @@
 <body>
 <g:render template="/templates/toolbar"/>
 
-<div id="edit-${propertyName}" class="content scaffold-edit" role="main">
+<div id="edit-${propertyName}" class="content scaffold-single scaffold-edit" role="main">
   <h1 class="page-header"><g:message code="default.edit.label" args="[entityName]"/></h1>
 
   <g:render template="/templates/messages" model="[bean: ${propertyName}]"/>

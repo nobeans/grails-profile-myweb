@@ -12,21 +12,21 @@
     margin-top: 12px;
 }
 
-fieldset.buttons {
+.scaffold-single fieldset.buttons {
     margin-top: 30px;
     margin-right: -15px;
     margin-left: -15px;
 }
 
-.form label {
+.scaffold-single .form label {
     margin-top: -3px;
 }
 
-.form-control {
+.scaffold-single .form-control {
     font-size: 16px;
 }
 
-.form-control.display {
+.scaffold-single .form-control.display {
     background: inherit;
     border: none;
     -webkit-box-shadow: none;
@@ -35,44 +35,44 @@ fieldset.buttons {
     padding-left: 0px;
 }
 
-textarea.form-control {
+.scaffold-single textarea.form-control {
     height: 6em;
 }
 
-.form-control[type="checkbox"] {
+.scaffold-single .form-control[type="checkbox"] {
     -webkit-box-shadow: none;
     box-shadow: none;
     width: 18px;
 }
 
-.form-control[type="number"] {
+.scaffold-single .form-control[type="number"] {
     width: 135px;
 }
 
-.form-control[type="range"] {
+.scaffold-single .form-control[type="range"] {
     box-shadow: none;
 }
 
-.form-control.datepicker {
+.scaffold-single .form-control.datepicker {
     width: 180px;
     background-color: #fff;
     border-radius: 0 4px 4px 0 !important;
 }
 
-.form-control.datetime {
+.scaffold-single .form-control.datetime {
     width: 218px;
 }
 
-.picker * {
+.scaffold-single .picker * {
     transition: none;
 }
 
-.picker__weekday {
+.scaffold-single .picker__weekday {
     text-align: center;
 }
 
 @media screen and (min-width: 860px) {
-    .form-control {
+    .scaffold-single .form-control {
         max-width: 80%;
     }
 }

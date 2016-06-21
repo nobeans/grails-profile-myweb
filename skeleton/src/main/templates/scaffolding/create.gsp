@@ -9,7 +9,7 @@
 <body>
 <g:render template="/templates/toolbar"/>
 
-<div id="create-${propertyName}" class="content scaffold-create" role="main">
+<div id="create-${propertyName}" class="content scaffold-single scaffold-create" role="main">
   <h1 class="page-header"><g:message code="default.create.label" args="[entityName]"/></h1>
 
   <g:render template="/templates/messages" model="[bean: ${propertyName}]"/>

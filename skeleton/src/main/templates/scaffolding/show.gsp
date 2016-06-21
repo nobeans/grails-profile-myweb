@@ -9,7 +9,7 @@
 <body>
 <g:render template="/templates/toolbar"/>
 
-<div id="show-${propertyName}" class="content scaffold-show" role="main">
+<div id="show-${propertyName}" class="content scaffold-single scaffold-show" role="main">
   <h1 class="page-header"><g:message code="default.show.label" args="[entityName]"/></h1>
 
   <g:render template="/templates/messages"/>
