@@ -13,7 +13,7 @@ abstract class ConstraintUnitSpec extends Specification {
     DataBinder dataBinder
 
     def setup() {
-        dataBinder = new GrailsWebDataBinder(null)
+        dataBinder = new GrailsWebDataBinder(grailsApplication)
 
         // application.ymlでの設定を反映する。
         def config = loadConfig()
