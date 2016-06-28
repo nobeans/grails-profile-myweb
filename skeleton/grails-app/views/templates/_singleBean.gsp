@@ -7,8 +7,8 @@
   }
 %>
 
-<g:set var="domainProperties" value="${properties ?: myweb.sample.common.DomainClassUtil.getConstrainedPropertyNames(bean)}"/>
-<g:set var="domainClassName" value="${myweb.sample.common.DomainClassUtil.getDomainClassPropertyName(bean)}"/>
+<g:set var="domainProperties" value="${properties ?: @grails.codegen.defaultPackage@.common.DomainClassUtil.getConstrainedPropertyNames(bean)}"/>
+<g:set var="domainClassName" value="${@grails.codegen.defaultPackage@.common.DomainClassUtil.getDomainClassPropertyName(bean)}"/>
 
 <div class="form-horizontal">
 
