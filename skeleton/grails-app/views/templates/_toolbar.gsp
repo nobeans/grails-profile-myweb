@@ -6,7 +6,7 @@
   </g:if>
   <g:if test="${!(actionName in ['create', 'save', 'edit', 'update'])}">
     <div class="navbar-form navbar-right">
-      <g:link class="create" action="create" class="btn btn-primary"><g:message code="default.new.label" args="[entityName]"/></g:link>
+      <g:link class="create btn btn-primary" action="create"><g:message code="default.new.label" args="[entityName]"/></g:link>
     </div>
   </g:if>
 </nav>
