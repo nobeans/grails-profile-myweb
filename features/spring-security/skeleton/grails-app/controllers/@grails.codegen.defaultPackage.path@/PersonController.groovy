@@ -1,12 +1,15 @@
 package @grails.codegen.defaultPackage@
 
-import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import grails.util.Holders
+
+import static org.springframework.http.HttpStatus.*
 
 /**
  * {@code Person}管理用のコントローラです。
  */
+@Secured(["hasRole('ROLE_ADMIN')"])
 @Transactional(readOnly = true)
 class PersonController {
 

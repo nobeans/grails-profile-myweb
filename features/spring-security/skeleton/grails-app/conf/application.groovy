@@ -14,22 +14,34 @@ grails {
             }
             authority.className = '@grails.codegen.defaultPackage@.Role'
 
-            // URLベースでのアクセス制御を設定する。
-            // アノテーションベースでは開発ポータル(/)へのアクセス制御ができないため、
-            // InterceptUrlMapによるアクセス制御を採用する。
-            securityConfigType = "InterceptUrlMap"
-            interceptUrlMap = [
+            // アノテーション以外の静的認可ルールを設定する。
+            // CVE-2016-5007対策のため、アノテーションベースで認可設定をする。
+            // ただし、静的ファイルやポータルページ、プラグインのコントローラなど、
+            // アプリとしてアノテーションを付与できないものは、ここで静的ルールとして設定する。
+            // 自前のコントローラについては原則アノテーションによって認可設定すること。
+            controllerAnnotations.staticRules = [
                 [pattern: '/',               access: ['permitAll']],
                 [pattern: '/error',          access: ['permitAll']],
+                [pattern: '/index',          access: ['permitAll']],
+                [pattern: '/index.gsp',      access: ['permitAll']],
+                [pattern: '/shutdown',       access: ['permitAll']],
                 [pattern: '/dbconsole/**',   access: ['permitAll']],
                 [pattern: '/assets/**',      access: ['permitAll']],
                 [pattern: '/**/js/**',       access: ['permitAll']],
                 [pattern: '/**/css/**',      access: ['permitAll']],
                 [pattern: '/**/images/**',   access: ['permitAll']],
                 [pattern: '/**/favicon.ico', access: ['permitAll']],
-                [pattern: '/login/**',       access: ['permitAll']],
-                [pattern: '/logout/**',      access: ['permitAll']],
-                [pattern: '/person/**',      access: ['hasRole("ROLE_ADMIN")']],
+            ]
+
+            // 静的ファイルへの認可は不要でフルアクセスなので、無駄にフィルタがかからないように除外する。
+            filterChain.chainMap = [
+                [pattern: '/assets/**',      filters: 'none'],
+                [pattern: '/**/js/**',       filters: 'none'],
+                [pattern: '/**/css/**',      filters: 'none'],
+                [pattern: '/**/images/**',   filters: 'none'],
+                [pattern: '/**/favicon.ico', filters: 'none'],
+                [pattern: '/**/fonts/**',    filters: 'none'],
+                [pattern: '/**',             filters: 'JOINED_FILTERS']
             ]
 
             // 管理者は、一般ユーザの権限を兼ねる。

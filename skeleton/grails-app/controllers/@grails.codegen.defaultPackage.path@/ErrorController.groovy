@@ -1,8 +1,10 @@
 package @grails.codegen.defaultPackage@
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.util.GrailsUtil
 import org.springframework.http.HttpStatus
 
+@Secured(["permitAll"])
 class ErrorController {
 
     def handle403() {
