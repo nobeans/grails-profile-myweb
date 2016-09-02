@@ -21,7 +21,7 @@ grails {
             // 自前のコントローラについては原則アノテーションによって認可設定すること。
             controllerAnnotations.staticRules = [
                 [pattern: '/',               access: ['permitAll']],
-                [pattern: '/error',          access: ['permitAll']],
+                [pattern: '/error/**',       access: ['permitAll']],
                 [pattern: '/index',          access: ['permitAll']],
                 [pattern: '/index.gsp',      access: ['permitAll']],
                 [pattern: '/shutdown',       access: ['permitAll']],
