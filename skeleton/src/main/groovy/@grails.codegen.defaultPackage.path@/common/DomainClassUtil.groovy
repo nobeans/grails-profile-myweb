@@ -55,9 +55,11 @@ class DomainClassUtil {
      * @return
      */
     static String getDateFormat(Class domainClass, String propertyName) {
-        def field = domainClass.getDeclaredField(propertyName)
-        if (!field) {
-            throw new IllegalArgumentException("指定されたプロパティは存在しません。: domainClass=${domainClass}, propertyName=${propertyName}")
+        def field
+        try {
+            field = domainClass.getDeclaredField(propertyName)
+        } catch (NoSuchFieldException e) {
+            throw new IllegalArgumentException("指定されたプロパティは存在しません。: domainClass=${domainClass}, propertyName=${propertyName}", e)
         }
         if (field.type != Date) {
             throw new IllegalArgumentException("指定されたプロパティはjava.util.Date型ではありません。: domainClass=${domainClass}, propertyName=${propertyName}, type=${field.type}")
