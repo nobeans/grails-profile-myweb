@@ -5,5 +5,12 @@ configure(bootRun) {
     systemProperties System.properties
 }
 
+// テストの実行結果をコンソールに出力する。
+tasks.withType(Test) {
+    afterTest { desc, result ->
+        println """- Tested: (${desc.className}) "${desc.name}" ===> ${result.resultType}"""
+    }
+}
+
 // コマンド引数でタスクを省略したときに実行されるデフォルトタスク
 defaultTasks 'clean', 'check'
