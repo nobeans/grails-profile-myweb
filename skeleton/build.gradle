@@ -1,4 +1,22 @@
 
+// Codenarcの設定
+codenarcMain {
+    configFile = file("codenarc/ruleset-main.groovy")
+}
+codenarcTest {
+    configFile = file("codenarc/ruleset-test.groovy")
+}
+codenarcIntegrationTest {
+    configFile = file("codenarc/ruleset-test.groovy")
+}
+tasks.withType(CodeNarc) {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+check.dependsOn 'codenarcMain', 'codenarcTest'
+
 // システムプロパティをGrailsに伝播させる
 // http://mrhaki.blogspot.jp/2015/09/grails-goodness-passing-system.html
 configure(bootRun) {

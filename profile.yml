@@ -1,4 +1,7 @@
 description: This is the profile of myself, by myself, for myself.
+build:
+    plugins:
+        - codenarc
 features:
     defaults:
         - hibernate
