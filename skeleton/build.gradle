@@ -4,3 +4,6 @@
 configure(bootRun) {
     systemProperties System.properties
 }
+
+// コマンド引数でタスクを省略したときに実行されるデフォルトタスク
+defaultTasks 'clean', 'check'
