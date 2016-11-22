@@ -34,7 +34,7 @@ repositories {
 
 dependencies {
     // webプロファイルからの派生とする。
-    runtime "org.grails.profiles:web:${project.grailsVersion}"
+    runtime "org.grails.profiles:web:${project.profileVersion}"
 }
 
 task createSampleApp(type: Exec) {
