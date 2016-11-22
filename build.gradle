@@ -45,7 +45,7 @@ task createSampleApp(type: Exec) {
     def appName = "myweb-sample"
     def projectDir = file("$workingDir/myweb-sample")
 
-    def cmd = ["grails", "create-app", "--profile=myweb"]
+    def cmd = ["grails", "create-app", "--profile=${project.group}:${project.name}:${project.version}"]
     if (Boolean.getBoolean('with-spring-security')) {
         cmd << "--features=hibernate5,asset-pipeline,spring-security"
     }
